@@ -29,9 +29,7 @@ public class UserInputParser {
         }
         // the command keyword is the first part
         String commandKeyword = inputParts.get(0);
-        Optional<Command> command = Command.availableCommands.stream()
-                .filter(item -> item.commandType.getKeyword().equals(commandKeyword))
-                .findFirst();
+        Optional<Command> command = Command.getCommandByKeyword(commandKeyword);
         if (command.isPresent()) {
             // exclude command name
             List<String> commandArgs = inputParts.subList(1, inputParts.size());
