@@ -4,6 +4,7 @@ import org.metroz.command.Command;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,12 +27,15 @@ public class UserInputParser {
             inputParts.add(matcher.group(3) == null ?
                     matcher.group(4) : matcher.group(3));
         }
-        // the command is the first part
-        String command = inputParts.get(0);
-        if (Command.availableCommands.containsKey(command)) {
+        // the command keyword is the first part
+        String commandKeyword = inputParts.get(0);
+        Optional<Command> command = Command.availableCommands.stream()
+                .filter(item -> item.commandType.getKeyword().equals(commandKeyword))
+                .findFirst();
+        if (command.isPresent()) {
             // exclude command name
             List<String> commandArgs = inputParts.subList(1, inputParts.size());
-            Command.availableCommands.get(command).execute(commandArgs);
+            command.get().execute(commandArgs);
         } else {
             throw new IllegalArgumentException("Invalid command: " + command);
         }

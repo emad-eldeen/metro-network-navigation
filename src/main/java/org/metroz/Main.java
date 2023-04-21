@@ -39,12 +39,17 @@ public class Main {
         } catch (NoSuchElementException e) {
             System.exit(0);
         }
-        while (scanner.hasNext()) {
+        boolean shutdown = false;
+        while (!shutdown) {
             System.out.println("Enter a command, '/help' for help or CTRL+D to exit:");
-            try {
-                UserInputParser.parseCommand(scanner.nextLine());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            if (scanner.hasNext()) {
+                try {
+                    UserInputParser.parseCommand(scanner.nextLine());
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            } else {
+                shutdown = true;
             }
         }
         System.out.println("Goodbye!");

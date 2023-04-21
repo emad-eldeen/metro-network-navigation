@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b4a5ad5-dfd6-4769-b83a-b59db66a0401" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/command/AddHeadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/AddHeadCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/io/UserInputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/io/UserInputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/metro/MetroNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/metro/MetroNetwork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,8 +98,33 @@
       <option name="project" value="LOCAL" />
       <updated>1682060155039</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="init">
+      <created>1682060532020</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682060532020</updated>
+    </task>
+    <task id="LOCAL-00007" summary="init">
+      <created>1682060645495</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682060645495</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

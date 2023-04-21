@@ -5,9 +5,10 @@ import org.metroz.metro.MetroNetwork;
 import java.util.List;
 
 public class AddHeadCommand extends Command {
-    AddHeadCommand(int argsNumber, String help) {
+    AddHeadCommand(Type commandType, int argsNumber, String helpText) {
         super.argsNumber = argsNumber;
-        super.help = help;
+        super.helpText = helpText;
+        super.commandType = commandType;
     }
     @Override
     public void execute(List<String> args) {
