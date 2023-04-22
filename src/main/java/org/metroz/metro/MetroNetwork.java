@@ -1,5 +1,7 @@
 package org.metroz.metro;
 
+import org.metroz.graph.Utils;
+
 import java.util.*;
 
 /**
@@ -56,24 +58,20 @@ public class MetroNetwork {
     }
 
 
-    public void appendStation(String lineName, String stationName, int cost) {
+    public void appendStation(String lineName, String stationName) {
         if (!stations.containsKey(stationName)) {
             stations.put(stationName, new MetroStation(stationName));
         }
         MetroStation station = stations.get(stationName);
-        MetroStation oldLastStation = lines.get(lineName).getStations().getLast();
         lines.get(lineName).appendStation(station);
-        // add a link between the old last station and the new one
-        addLink(new MetroLink(oldLastStation, station, cost));
     }
 
     /**
-     *
-     * @param lineName
-     * @param stationName
-     * @param cost cost to move from this station to next one and vice versa
+     * adds a station at the start of a metro line
+     * @param lineName name of the metro line
+     * @param stationName name of the station
      */
-    public void addHeadStation(String lineName, String stationName, int cost) {
+    public void addHeadStation(String lineName, String stationName) {
         if (!stations.containsKey(stationName)) {
             stations.put(stationName, new MetroStation(stationName));
         }
@@ -102,6 +100,65 @@ public class MetroNetwork {
         links.add(link);
     }
 
-    record RouteNode(MetroStation station, MetroLine line, MetroStation reachedBy, int cost) {
+
+    /**
+     * calculates and prints the shortest route (in terms of numbers of stations) between two stations
+     * @param startLineName name of the starting line
+     * @param startStationName name of the starting station
+     * @param destinationStationName name of the destination station
+     */
+    public void getShortestRoute(String startLineName, String startStationName, String destinationStationName) {
+        MetroLine startLine = lines.get(startLineName);
+        MetroStation startingStation = stations.get(startStationName);
+        MetroStation destinationStation = stations.get(destinationStationName);
+        List<RouteNode> spanningTree = Utils.applyBDF(startingStation, startLine, destinationStation);
+        printRoute(Utils.getRoute(destinationStation, startingStation, spanningTree), true);
+    }
+
+    /**
+     * calculates and prints the fastest route (in terms of cost) between two stations
+     * @param startLineName name of the starting line
+     * @param startStationName name of the starting station
+     * @param destinationStationName name of the destination station
+     */
+    public void getFastestRoute(String startLineName, String startStationName, String destinationStationName) {
+        MetroLine startLine = lines.get(startLineName);
+        MetroStation startingStation = stations.get(startStationName);
+        MetroStation endingStation = stations.get(destinationStationName);
+        HashMap<MetroStation, RouteNode> routeNodes = Utils.applyDijkstra(stations, links, startingStation, startLine, TRANSFER_COST);
+        printRoute(Utils.getRoute(endingStation, startingStation, routeNodes.values().stream().toList()), false);
+    }
+
+    /**
+     * prints the specified route
+     * @param showTransfer whether to print the line transfer information
+     */
+    private void printRoute(Deque<RouteNode> route, boolean showTransfer) {
+        MetroLine currentLine = route.getFirst().line();
+        int totalCost = 0;
+        while (route.size() > 0) {
+            RouteNode current = route.pop();
+            totalCost = current.cost;
+            System.out.println(current.station);
+            // if there is a next node
+            if (route.size() > 0) {
+                // don't remove it from the queue
+                RouteNode nextNode = route.peek();
+                if (nextNode.line != currentLine) {
+                    // it means that current node is a transfer
+                    if (showTransfer) {
+                        System.out.println("Transition to line " + nextNode.line);
+                        System.out.println(current.station);
+                    }
+                    currentLine = nextNode.line;
+                }
+            }
+        }
+        if (totalCost > 0) {
+            System.out.printf("Total: %d minutes in the way%n", totalCost);
+        }
+    }
+
+    public record RouteNode(MetroStation station, MetroLine line, MetroStation reachedBy, int cost) {
     }
 }

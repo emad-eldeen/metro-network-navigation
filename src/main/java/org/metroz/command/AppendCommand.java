@@ -7,8 +7,8 @@ import java.util.List;
 public class AppendCommand extends Command {
     AppendCommand() {
         commandType = Type.APPEND;
-        helpText = "";
-        argsNumber = 3;
+        helpText = "<line name> <station name>";
+        argsNumber = 2;
         keyword = "append";
     }
 
@@ -17,11 +17,6 @@ public class AppendCommand extends Command {
         validateArgsNumber(args);
         String lineName = args.get(0);
         String stationName = args.get(1);
-        try {
-            int stationCost = Integer.parseInt(args.get(2));
-            MetroNetwork.getInstance().appendStation(lineName, stationName, stationCost);
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Please specify a valid number as the cost of the station to be added");
-        }
+        MetroNetwork.getInstance().appendStation(lineName, stationName);
     }
 }

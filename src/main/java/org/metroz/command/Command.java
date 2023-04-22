@@ -16,6 +16,8 @@ public abstract class Command {
             new AppendCommand(),
             new PrintLineCommand(),
             new RemoveCommand(),
+            new FastestRouteCommand(),
+            new ShortestRouteCommand(),
             new ExitCommand()
     );
 

@@ -34,8 +34,9 @@ public class UserInputParser {
             // exclude command name
             List<String> commandArgs = inputParts.subList(1, inputParts.size());
             command.get().execute(commandArgs);
+            System.out.println("Command executed successfully!");
         } else {
-            throw new IllegalArgumentException("Invalid command: " + command);
+            throw new IllegalArgumentException("Invalid command: " + commandKeyword);
         }
     }
 }

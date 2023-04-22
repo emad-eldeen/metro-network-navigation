@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b4a5ad5-dfd6-4769-b83a-b59db66a0401" name="Changes" comment="command refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/AddTransferCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/AppendCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/ExitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/PrintLineCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/RemoveCommand.java" afterDir="false" />
+    <list default="true" id="6b4a5ad5-dfd6-4769-b83a-b59db66a0401" name="Changes" comment="command refactoring + adding new commands">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/FastestRouteCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/ShortestRouteCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/metroz/graph/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/command/AddHeadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/AddHeadCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/command/PrintLineCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/command/PrintLineCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/io/UserInputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/io/UserInputParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/metro/MetroLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/metro/MetroLink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metroz/metro/MetroNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metroz/metro/MetroNetwork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682085888980</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="command refactoring + adding new commands">
+      <created>1682088794959</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682088794959</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +146,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="command refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="command refactoring" />
+    <MESSAGE value="command refactoring + adding new commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="command refactoring + adding new commands" />
   </component>
 </project>
