@@ -18,7 +18,8 @@ public abstract class Command {
             new RemoveCommand(),
             new FastestRouteCommand(),
             new ShortestRouteCommand(),
-            new ExitCommand()
+            new ExitCommand(),
+            new ListLinesCommand()
     );
 
     public abstract void execute(List<String> args);
@@ -45,6 +46,7 @@ public abstract class Command {
         ADD_TRANSFER,
         SHORTEST_ROUTE,
         FASTEST_ROUTE,
-        EXIT
+        EXIT,
+        LIST_LINES,
     }
 }

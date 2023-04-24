@@ -7,7 +7,7 @@ import java.util.List;
 public class RemoveCommand extends Command {
     RemoveCommand() {
         commandType = Type.REMOVE;
-        helpText = "";
+        helpText = "<line name> <station name>";
         argsNumber = 2;
         keyword = "remove";
     }

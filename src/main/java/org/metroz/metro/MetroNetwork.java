@@ -159,6 +159,10 @@ public class MetroNetwork {
         }
     }
 
+    public HashMap<String, MetroLine> getLines() {
+        return lines;
+    }
+
     public record RouteNode(MetroStation station, MetroLine line, MetroStation reachedBy, int cost) {
     }
 }

@@ -5,6 +5,7 @@ import java.util.List;
 public class ExitCommand extends Command {
     ExitCommand() {
         commandType = Type.EXIT;
+        helpText = "";
         keyword = "exit";
     }
 

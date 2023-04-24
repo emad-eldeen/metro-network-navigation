@@ -8,6 +8,10 @@ An application that will help you better navigate the complicated metro system f
 - calculation of fastest route between two stations in terms of hobs
 - calculation of shortest route between two stations in terms of cost
 
+## How to use
+After running the app, input the name of the json file that has the metro network information to load. The file should be under `resources` folder. e.g. `prage.json`.
+After that, a command from the command list could be used.
+
 ## Knowledge Used
 - Java collections
 - Java streams
@@ -20,6 +24,7 @@ An application that will help you better navigate the complicated metro system f
   - Creational: singleton
 
 ## Commands List
+- `/list`: lists the metro lines
 - `/add-head <line name> <station name>`: adds a metro station at the start of specified line. e.g. `/add-head "Linka A" test`
 - `/append <line name> <station name>`: adds a metro station at the end of specified line. e.g. `/append "Linka A" test`
 - `/remove <line name> <station name>`: removes the specified station from the specified line. e.g. `/remove "Linka A" test`

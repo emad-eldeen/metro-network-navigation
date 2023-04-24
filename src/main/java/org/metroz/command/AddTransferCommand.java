@@ -8,7 +8,7 @@ public class AddTransferCommand extends Command {
 
     AddTransferCommand() {
         commandType = Type.ADD_TRANSFER;
-        helpText = "";
+        helpText = "<from line name> <from station name> <to line name> <to station name>";
         argsNumber = 4;
         keyword = "connect";
     }
